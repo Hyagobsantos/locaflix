@@ -21,6 +21,10 @@
         <li class="nav-item col-9"></li>
       <% end %>
 
+      <% if locals[:context_now] == "create" %>
+        <li class="nav-item col-10"></li>
+      <% end %>
+
       <li class="nav-item">
         <% if locals[:context_now] == "index" %>
           <a><%= link_to "Criar Filme", new_movie_path, class: "nav-link btn-new btn-custom"%></a>
@@ -39,6 +43,12 @@
             <%= link_to "voltar aos filmes", movies_path,  class: "nav-link btn-edit btn-custom" %>
           </div>
         <% end %>
+
+        <% if locals[:context_now] == "create" %>
+          <div class="center-btn">
+            <%= link_to "voltar aos filmes", movies_path,  class: "nav-link btn-edit btn-custom" %>
+          </div>
+        <% end %>
       </li>
     </ul>
   </div>
@@ -47,8 +57,8 @@
 <% if locals[:context_now] == "index" %>
 <div class="row">
   <h1 class="col-9 h1-di">Filmes</h1>
-  <form class="d-flex col form-di" role="search">
-    <input class="form-control me-2" type="search" placeholder="Genero" aria-label="Search">
+  <form data-turbo="false" class="d-flex col form-di" role="search">
+    <input class="form-control me-2" type="search" placeholder="Genero" aria-label="Search" name="q">
     <button class="btn btn-outline-success" type="submit">Filtrar</button>
   </form>
 </div>

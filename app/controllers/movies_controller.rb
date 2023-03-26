@@ -3,7 +3,11 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    if params[:q].present?
+      @movies = filter(params[:q])
+    else
+      @movies = Movie.all
+    end
   end
 
   # GET /movies/1 or /movies/1.json
@@ -70,4 +74,9 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :describe, :gender)
     end
+
+  def filter search
+    searching  = Movie.sanitize_sql_like search
+    Movie.where("gender LIKE ?", "%#{searching}%")
+  end
 end

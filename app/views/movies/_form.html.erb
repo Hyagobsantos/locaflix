@@ -13,16 +13,16 @@
 
   <form>
     <div class="mb-3">
-      <%= form.label :title, style: "display: block", class:"form-label" %>
+      <%= form.label :titulo, style: "display: block", class:"form-label" %>
       <%= form.text_field :title, class: "form-control" %>
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-3">
-      <%= form.label :describe, style: "display: block", class:"form-label" %>
+      <%= form.label :descricao, style: "display: block", class:"form-label" %>
       <%= form.text_field :describe, class: "form-control" %>
+      <div id="emailHelp" class="form-text">breve resumo do filme</div>
     </div>
     <div class="mb-3">
-      <%= form.label :gender, style: "display: block", class:"form-label" %>
+      <%= form.label :genero, style: "display: block", class:"form-label" %>
       <%= form.select(:gender, listGender, { prompt: "Escolha um genero" }, {class:  "form-select"}) %>
     </div>
     <%= form.submit title, class:"btn btn-primary" %>
