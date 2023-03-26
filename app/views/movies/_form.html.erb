@@ -25,6 +25,6 @@
       <%= form.label :gender, style: "display: block", class:"form-label" %>
       <%= form.select(:gender, listGender, { prompt: "Escolha um genero" }, {class:  "form-select"}) %>
     </div>
-    <%= form.submit class:"btn btn-primary" %>
+    <%= form.submit title, class:"btn btn-primary" %>
   </form>
 <% end %>

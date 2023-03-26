@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<h1>Movies</h1>
+<%= render "nav", :locals => {context_now: "index" }  %>
 
-<div id="movies">
+<div class="row " id="movies">
   <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <%= render movie %>
+        <%= link_to "+Detalhes", movie,  :class => "btn btn-primary justify-content-center space-show" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+

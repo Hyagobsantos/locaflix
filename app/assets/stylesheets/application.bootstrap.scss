@@ -1,3 +1,99 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+/* Application */
+
+.col {
+  margin-top: 30px;
+}
+
+.space-show {
+  margin: 10px;
+}
+
+.space-new{
+  margin-top: 20px;
+  width: 300px;
+  height: auto;
+}
+
+/* End Application */
+
+/* Navi */
+
+.loca {
+  color: #5667c8;
+}
+
+.flix {
+  color: #a24040;
+}
+
+.locaflix {
+  border: 2px solid rgba(70, 68, 68, 0.91);;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* End Navi */
+
+/* Buttons Nav*/
+.btn-custom {
+  border-radius: 8px;
+}
+
+.btn-new, .btn-edit{
+  border: 1px solid #198754;
+  color: #198754;
+}
+
+.btn-destroy {
+  background-color: white;
+  border: 1px solid rgba(203, 39, 55, 0.91);
+  color: rgba(203, 39, 55, 0.91);
+}
+
+.btn-new:hover, .btn-edit:hover {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-destroy:hover {
+  background-color: rgba(203, 39, 55, 0.91);
+  color: white;
+}
+
+.center-btn {
+  display: flex;
+}
+
+/* End Buttons Nav*/
+
+.h1-di{
+ padding-top: 22px;
+  margin-bottom: 0;
+}
+
+.form-di{
+  padding-left: 4px;
+}
+
+/* Show */
+
+.show-main {
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid black
+}
+
+.show-main-links {
+  padding-bottom: 10px;
+}
+
+
+
