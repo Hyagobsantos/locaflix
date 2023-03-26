@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_26_001508) do
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.string "describe"
-    t.string "gender"
+ActiveRecord::Schema[7.0].define(version: 2023_03_26_021158) do
+  create_table "comments", force: :cascade do |t|
+    t.string "note"
+    t.string "opinion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "describe"
+    t.string "gender", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "comment_id"
+    t.index ["comment_id"], name: "index_movies_on_comment_id"
+  end
+
+  add_foreign_key "movies", "comments"
 end

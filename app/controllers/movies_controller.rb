@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
+    @movie.comment = Comment.first
 
     respond_to do |format|
       if @movie.save
