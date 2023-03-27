@@ -6,9 +6,9 @@
 
 <%= render "nav", :locals => {context_now: "index" }  %>
 
-<div class="row " id="movies">
+<div class="row" id="movies">
   <% @movies.each do |movie| %>
-    <div class="col">
+    <div class="col-md-auto col">
       <div class="card" style="width: 18rem;">
         <%= render movie %>
         <%= link_to "+Detalhes", movie,  :class => "btn btn-primary justify-content-center space-show" %>

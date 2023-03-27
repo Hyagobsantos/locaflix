@@ -1,20 +1,18 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <a class="navbar-brand " href="/movies">
     <h3 class="locaflix">
-      <span class="loca">Loca</span>
-      <span class="flix">Flix</span>
+      <span class="loca">Loca</span><span class="flix">Flix</span>
     </h3>
   </a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav col-12">
-
       <% if locals[:context_now] == "index" %>
         <li class="nav-item col-11"></li>
       <% end %>
 
       <% if locals[:context_now] == "show" %>
-        <li class="nav-item col-9"></li>
+        <li class="nav-item col-8"></li>
       <% end %>
 
       <% if locals[:context_now] == "edit" %>
@@ -34,6 +32,7 @@
           <div class="center-btn">
             <%= link_to "Editar Filme", edit_movie_path(@movie), class: "nav-link btn-edit btn-custom" %>
             <%= button_to "Destroy this movie", @movie, method: :delete, class: "nav-link btn-destroy btn-custom" %>
+            <%= link_to "Avaliar", new_movie_comment_path(@movie), class: "nav-link  btn-custom-comments" %>
           </div>
         <% end %>
 

@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     if params[:q].present?
-      @movies = filter(params[:q])
+      @movies = filter(params[:q].capitalize)
     else
       @movies = Movie.all
     end
@@ -26,7 +26,6 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
-    @movie.comment = Comment.first
 
     respond_to do |format|
       if @movie.save

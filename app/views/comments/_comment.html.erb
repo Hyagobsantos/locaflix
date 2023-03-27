@@ -1,0 +1,10 @@
+<div class="card-body show-main-links-comment">
+  <h4 class="card-text">Nota: <%= comment.note %></h4>
+  <h4 class="card-text">Comentário: <%=comment.opinion %></h4>
+  <h4 class="card-title">Assistido: <%= comment.watched == true ? "Sim" : "Não" %></h4>
+  <h4 class="card-title">Criado em: <%= comment.created_at.strftime("%d-%m-%Y") %></h4>
+  <h4 class="card-title">Filme: <%= comment.movie.title %></h4>
+
+</div>
+
+

@@ -1,0 +1,15 @@
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+
+<%= render "nav", :locals => {context_now: "show" }  %>
+
+<h1 class="col-9 h1-di">Detalhes</h1>
+<div class="show-main">
+  <div class="show-main-links">
+    <%= render @comment %>
+    <%= link_to "Voltar aos Comentarios", comments_path, class: "btn btn-primary" %>
+  </div>
+</div>

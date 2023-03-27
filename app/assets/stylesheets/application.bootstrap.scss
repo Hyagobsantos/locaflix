@@ -2,7 +2,6 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 /* Application */
-
 .col {
   margin-top: 30px;
 }
@@ -20,7 +19,6 @@
 /* End Application */
 
 /* Navi */
-
 .loca {
   color: #5667c8;
 }
@@ -34,12 +32,17 @@
   border-radius: 5px;
   padding: 5px;
 }
-
 /* End Navi */
 
 /* Buttons Nav*/
 .btn-custom {
   border-radius: 8px;
+}
+
+.btn-custom-comments {
+  border-radius: 8px;
+  border: 1px solid #0a2195;
+  color: #0a2195;
 }
 
 .btn-new, .btn-edit{
@@ -63,10 +66,16 @@
   color: white;
 }
 
-.center-btn {
-  display: flex;
+.btn-custom-comments:hover {
+  background-color: #0a2195;
+  color: white;
 }
 
+.center-btn {
+  display: flex;
+
+  gap: 5px
+}
 /* End Buttons Nav*/
 
 .h1-di{
@@ -82,18 +91,32 @@
 
 .show-main {
   height: 400px;
+  width: 400px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  border: 2px solid black
+  margin-top: 10px;
+
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .show-main-links {
   padding-bottom: 10px;
 }
 
+.show-main-links-comment{
+  height: 340px;
+}
+/* End Show */
+
+.teste-aumento {
+  width: 605px;
+}
 
 

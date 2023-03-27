@@ -1,7 +1,4 @@
 class Movie < ApplicationRecord
-  belongs_to :comment
-
-
-
+  has_one :comment
 
 end

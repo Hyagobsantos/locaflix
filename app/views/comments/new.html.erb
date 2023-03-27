@@ -1,0 +1,11 @@
+<%= render "nav", :locals => {context_now: "create"}  %>
+
+<h1>Nova Avaliação</h1>
+
+<%= render "form", comment: @comment, title: "Criar" %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar as Avalições", comments_path, class: "btn btn-secondary" %>
+</div>

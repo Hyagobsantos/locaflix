@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
   validates :opinion, length: {maximum: 140 }
 
-  has_one :movie
+  belongs_to :movie
 end
