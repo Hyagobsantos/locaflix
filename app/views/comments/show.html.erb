@@ -4,12 +4,17 @@
   </div>
 <% end %>
 
+<% if alert.present? %>
+  <div class="alert alert-danger" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+
 <%= render "nav", :locals => {context_now: "show" }  %>
 
 <h1 class="col-9 h1-di">Detalhes</h1>
-<div class="show-main">
-  <div class="show-main-links">
+
+<div class="card space-new">
     <%= render @comment %>
-    <%= link_to "Voltar aos Comentarios", comments_path, class: "btn btn-primary" %>
-  </div>
+    <%= link_to "Voltar aos Comentarios", comments_path, class: "btn btn-primary justify-content-center space-show" %>
 </div>

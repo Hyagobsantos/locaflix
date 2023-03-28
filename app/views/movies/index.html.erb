@@ -4,12 +4,12 @@
   </div>
 <% end %>
 
-<%= render "nav", :locals => {context_now: "index" }  %>
+<%= render "nav", :locals => {context_now: "index", list_geners: listGender, name_user: @useratual }  %>
 
 <div class="row" id="movies">
   <% @movies.each do |movie| %>
     <div class="col-md-auto col">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="height: 45rem;width: 18rem">
         <%= render movie %>
         <%= link_to "+Detalhes", movie,  :class => "btn btn-primary justify-content-center space-show" %>
       </div>

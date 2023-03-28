@@ -1,17 +1,17 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => "/sidekiq" if Rails.env.development?
+
+  devise_for :users
   resources :comments
 
   resources :movies do
     resources :comments, only: [:new]
   end
 
+  root to: "welcome#index", as: :welcome_home
 
-
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-
+  get "developers", to: "developers#index"
+  post "/developers", to: "developers#create_key"
 end

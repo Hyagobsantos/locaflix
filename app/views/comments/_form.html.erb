@@ -30,8 +30,14 @@
     </div>
 
     <div>
-      <%= form.label :filme, style: "display: block" %>
-      <%= form.text_field :movie_id, class: "form-control d-none", value: @select, readonly:true %>
+      <% if title == "Criar" %>
+        <%= form.text_field :movie_id, class: "form-control d-none", value: @select, readonly:true %>
+      <% end %>
+
+      <% if title == "Editar" %>
+        <%= form.text_field :movie_id, class: "form-control d-none", value: @movie_id, readonly:true %>
+      <% end %>
+
     </div>
 
     <%= form.submit title, class:"btn btn-primary" %>

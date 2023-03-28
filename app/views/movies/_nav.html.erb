@@ -4,7 +4,6 @@
       <span class="loca">Loca</span><span class="flix">Flix</span>
     </h3>
   </a>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav col-12">
       <% if locals[:context_now] == "index" %>
@@ -55,9 +54,14 @@
 
 <% if locals[:context_now] == "index" %>
 <div class="row">
-  <h1 class="col-9 h1-di">Filmes</h1>
+  <h3 class="col-9 h1-di ">Filmes de <span class="gradient"><%= locals[:name_user] %></span></h3>
   <form data-turbo="false" class="d-flex col form-di" role="search">
-    <input class="form-control me-2" type="search" placeholder="Genero" aria-label="Search" name="q">
+    <select class="form-select" name="q" id="q">
+      <option selected value="not_search">Selecione um gênero</option>
+      <% locals[:list_geners].each do |movie| %>
+        <option value=<%= movie %>><%= movie %></option>
+      <% end %>
+    </select>
     <button class="btn btn-outline-success" type="submit">Filtrar</button>
   </form>
 </div>

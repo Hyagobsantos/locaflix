@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
+#active jobs
+gem "sidekiq"
+
+#authenticate with devise
+gem "devise"
+
 #forman start project
 gem "foreman"
 

@@ -21,7 +21,7 @@
 
     <li class="nav-item">
       <% if locals[:context_now] == "index" %>
-        <a><%= link_to "Novo Comentário", new_comment_path, class: "nav-link btn-new btn-custom"%></a>
+        <a><%= link_to "voltar aos filmes", movies_path, class: "nav-link btn-new btn-custom"%></a>
       <% end %>
 
       <% if locals[:context_now] == "show" %>

@@ -13,25 +13,49 @@
 .space-new{
   margin-top: 20px;
   width: 300px;
-  height: auto;
 }
+
+
 
 /* End Application */
 
 /* Navi */
+
+
 .loca {
-  color: #5667c8;
+  background-image: linear-gradient(to bottom, #0f2ed9, #466897, #1e96c2);
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  -webkit-text-fill-color: transparent;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
 }
 
 .flix {
-  color: #a24040;
+  background-image: linear-gradient(to bottom, rebeccapurple, rgba(211, 34, 80, 0.78), #653434);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
 }
 
 .locaflix {
-  border: 2px solid rgba(70, 68, 68, 0.91);;
+  border: 1px solid rgba(70, 68, 68, 0.91);;
   border-radius: 5px;
   padding: 5px;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
 }
+
+.sle-form {
+  padding-right: 3px;
+}
+
 /* End Navi */
 
 /* Buttons Nav*/
@@ -111,12 +135,69 @@
 }
 
 .show-main-links-comment{
-  height: 340px;
+  height: 400px;
 }
 /* End Show */
 
-.teste-aumento {
-  width: 605px;
+
+
+/* Index */
+
+.font-index {
+  color: #5667c8
 }
 
+/* End Index */
+
+
+/* Home Filmes */
+
+.gradient {
+  /* Primeiro passo: definir um degradê como fundo */
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+  color: black;
+
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+}
+
+/* End Home Filmes */
+
+
+
+/* welcome */
+
+.list-unstylied {
+  list-style: none;
+
+  border: 30px solid transparent;
+
+  background-color: rgba(13, 3, 3, 0.04);
+  border-radius: 40px;
+  opacity: 0.900 ;
+}
+
+.nav-welcome {
+  margin-bottom: 20px;
+}
+
+.title-home {
+  color: #0d6efd
+}
+/* End welcome */
+
+.display-5 {
+  margin-bottom: 50px;
+}
 

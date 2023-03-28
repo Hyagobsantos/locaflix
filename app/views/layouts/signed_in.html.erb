@@ -1,0 +1,9 @@
+<% content_for :user_panel do %>
+  <div>
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}, class:"btn btn-link" %>|
+    <%= link_to "Developers", developers_path %> |
+    <%= link_to "welcome", welcome_home_path %>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>

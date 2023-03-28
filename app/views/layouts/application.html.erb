@@ -12,6 +12,7 @@
 
   <body>
   <div class="container">
+    <%= yield(:user_panel) if content_for(:user_panel) %>
     <%= yield %>
   </div>
   </body>

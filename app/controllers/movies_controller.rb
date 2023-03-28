@@ -3,11 +3,13 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    if params[:q].present?
-      @movies = filter(params[:q].capitalize)
+    if params[:q].present? && params[:q] != "not_search"
+      @movies = current_user.movies.select {|movie| params[:q].capitalize == movie.gender}
     else
-      @movies = Movie.all
+      @movies = current_user.movies
     end
+
+    @useratual = slicetext current_user.email
   end
 
   # GET /movies/1 or /movies/1.json
@@ -26,9 +28,10 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
-
+    @movie.user = current_user
     respond_to do |format|
       if @movie.save
+        SearchDetailsMovieJob.perform_later(@movie)
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
         format.json { render :show, status: :created, location: @movie }
       else
@@ -40,8 +43,6 @@ class MoviesController < ApplicationController
 
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
-    @movie.comment = Comment.first
-
     respond_to do |format|
       if @movie.update(movie_params)
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully updated." }
@@ -56,7 +57,6 @@ class MoviesController < ApplicationController
   # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy
-
     respond_to do |format|
       format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
       format.json { head :no_content }
@@ -77,5 +77,10 @@ class MoviesController < ApplicationController
   def filter search
     searching  = Movie.sanitize_sql_like search
     Movie.where("gender LIKE ?", "%#{searching}%")
+  end
+
+  def slicetext text
+    index_found = text.index "@"
+    found = text.slice! 0..index_found - 1
   end
 end
