@@ -11,6 +11,7 @@ gem "devise"
 
 #forman start project
 gem "foreman"
+gem "webpacker"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"

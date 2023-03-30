@@ -15,12 +15,32 @@
   width: 300px;
 }
 
-
-
 /* End Application */
 
 /* Navi */
 
+.main-ul {
+  gap: 20px;
+  margin-right: 122px;
+}
+
+.main-li {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+}
+
+.main-li-last {
+  margin-right: 122px;
+}
+
+.main-li:hover {
+  color: white;
+  background-color: #0b5ed7;
+}
 
 .loca {
   background-image: linear-gradient(to bottom, #0f2ed9, #466897, #1e96c2);
@@ -45,11 +65,12 @@
 }
 
 .locaflix {
-  border: 1px solid rgba(70, 68, 68, 0.91);;
+
   border-radius: 5px;
   padding: 5px;
   -webkit-text-fill-color: transparent;
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.51);
+  background-color: white;
 }
 
 .sle-form {
@@ -61,37 +82,43 @@
 /* Buttons Nav*/
 .btn-custom {
   border-radius: 8px;
+  background-color: #238353;
+  color: white;
 }
 
 .btn-custom-comments {
   border-radius: 8px;
   border: 1px solid #0a2195;
-  color: #0a2195;
-}
-
-.btn-new, .btn-edit{
-  border: 1px solid #198754;
-  color: #198754;
+  color: white;
+  background-color: #0b196f;
 }
 
 .btn-destroy {
-  background-color: white;
+  background-color: rgba(142, 14, 26, 0.91);
   border: 1px solid rgba(203, 39, 55, 0.91);
-  color: rgba(203, 39, 55, 0.91);
+  color: white
 }
 
-.btn-new:hover, .btn-edit:hover {
+.button-filter{
+  margin-left: 4px;
+  margin-right: 16px;
   background-color: #198754;
   color: white;
 }
 
+.btn-new:hover, .btn-edit:hover, .button-filter:hover {
+  background-color: #5cbb8f;
+  color: white;
+  border: none;
+}
+
 .btn-destroy:hover {
-  background-color: rgba(203, 39, 55, 0.91);
+  background-color: rgba(234, 17, 37, 0.91);
   color: white;
 }
 
 .btn-custom-comments:hover {
-  background-color: #0a2195;
+  background-color: #1430c5;
   color: white;
 }
 
@@ -154,22 +181,9 @@
 
 .gradient {
   /* Primeiro passo: definir um degradê como fundo */
-  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
-
-  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
-  background-clip: text;
-  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
-
-  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
-  -webkit-text-fill-color: transparent;
-
-  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
-  color: black;
-
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.1;
-
 }
 
 /* End Home Filmes */
@@ -195,9 +209,29 @@
 .title-home {
   color: #0d6efd
 }
-/* End welcome */
 
 .display-5 {
   margin-bottom: 50px;
+}
+
+.container-main {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 0.2px solid black;
+}
+
+.container-sub {
+  padding-left: 10px;
+}
+
+/* End welcome */
+body {
+  background-image: url(imagem-hd-de-fundo-gradiente-claro-limpo_181020-1366.jpeg);
+  background-size: cover;
 }
 

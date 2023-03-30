@@ -1,9 +1,31 @@
 <% content_for :user_panel do %>
-  <div>
-    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}, class:"btn btn-link" %>|
-    <%= link_to "Developers", developers_path %> |
-    <%= link_to "welcome", welcome_home_path %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="/movies">
+      <h3 class="locaflix">
+        <span class="loca">Loca</span><span class="flix">Flix</span>
+      </h3>
+    </a>
+
+    <div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-ul">
+        <li class="nav-item">
+          <%= link_to "Home", welcome_home_path, class: "main-li" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Filmes", movies_path, class: "main-li" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Developers", developers_path, class: "main-li" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}, class: "main-li main-li-last" %>
+        </li>
+
+      </ul>
+    </div>
   </div>
+</nav>
 <% end %>
 
 <%= render template: "layouts/application" %>

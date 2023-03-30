@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
     else
       @movies = current_user.movies
     end
-
     @useratual = slicetext current_user.email
   end
 
@@ -45,6 +44,7 @@ class MoviesController < ApplicationController
   def update
     respond_to do |format|
       if @movie.update(movie_params)
+        SearchDetailsMovieJob.perform_later(@movie)
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully updated." }
         format.json { render :show, status: :ok, location: @movie }
       else
