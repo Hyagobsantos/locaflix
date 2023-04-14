@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<%= render @movie %>
+<%= render "nav", :locals => {context_now: "show" }  %>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
+<h3 class="col-9 h1-di">Detalhes</h3>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+<div class="card space-new" style="width: 18rem;">
+    <%= render @movie %>
+    <%= link_to "Voltar aos Filmes", movies_path,:class => "btn btn-primary justify-content-center space-show" %>
 </div>
+

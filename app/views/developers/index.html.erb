@@ -1,0 +1,31 @@
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+
+<h1 class="display-5">Developers Dashboard</h1>
+
+
+
+<% if @api_key.present? %>
+  <div class="mb-3">
+    <div class="badge bg-secondary text-wrap" style="width: 6rem;">
+      Api key:
+    </div>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value=<%= @api_key %>>
+  </div>
+<% end %>
+
+
+<div>
+  <%= button_to "Gerar API key", {}, {class: 'btn btn-primary'} %>
+</div>
+
+

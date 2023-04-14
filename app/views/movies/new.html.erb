@@ -1,9 +1,11 @@
-<h1>New movie</h1>
+<%= render "nav", :locals => {context_now: "create"}  %>
 
-<%= render "form", movie: @movie %>
+<h3>Novo filme</h3>
+
+<%= render "form", movie: @movie, title: "Criar" %>
 
 <br>
 
 <div>
-  <%= link_to "Back to movies", movies_path %>
+  <%= link_to "Voltar aos Filmes", movies_path, class: "btn btn-success" %>
 </div>

@@ -1,17 +1,26 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
-
-  <p>
-    <strong>Describe:</strong>
-    <%= movie.describe %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= movie.gender %>
-  </p>
-
+<img class="card-img-top"
+     style="width: 18rem;height: 25rem"
+     alt=""
+     src=
+     <% if movie.img.present? %>
+         <%= movie.img %>
+     <% else %>
+         <%= image_path('SD-default-image') %>
+     <% end %>
+>
+<div class="card-body ">
+  <h5 class="card-title"><span class="title-home">Titulo:</span> <%= movie.title %></h5>
+  <p class="card-text"><span class="title-home">Observações:</span> <%= movie.describe %></p>
+  <p class="card-text"><span class="title-home">Genero:</span> <%= movie.gender %></p>
+  <p class="card-text"><span class="title-home">Ano:</span> <%= movie.year %></p>
 </div>
+
+
+
+
+
+
+
+
+
+

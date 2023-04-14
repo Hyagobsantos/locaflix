@@ -1,0 +1,21 @@
+<%= render "nav", :locals => {context_now: "welcome"}  %>
+
+<h1> Ultimos Comentarios</h1>
+
+<% @comments_welcome.each do |comment| %>
+  <div class="container-main">
+    <img src="<%= comment.movie.img %>" alt="" style="width: 14rem;">
+    <div class="container-sub">
+      <h5><span class="title-home">Filme: </span><%= comment.movie.title %></h5>
+      <h5><span class="title-home">Nota </span><%= comment.note %></h5>
+      <h5><span class="title-home">Opinião: </span><%= comment.opinion %></h5>
+      <h5><span class="title-home">Usuario: </span><%= comment.user.email %></h5>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+

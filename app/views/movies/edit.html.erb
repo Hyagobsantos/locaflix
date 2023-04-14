@@ -1,10 +1,5 @@
-<h1>Editing movie</h1>
+<%= render "nav", :locals => {context_now: "edit"}  %>
 
-<%= render "form", movie: @movie %>
+<h3>Editar</h3>
 
-<br>
-
-<div>
-  <%= link_to "Show this movie", @movie %> |
-  <%= link_to "Back to movies", movies_path %>
-</div>
+<%= render "form", movie: @movie, title: "Editar" %>

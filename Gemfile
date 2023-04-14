@@ -3,8 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
+#active jobs
+gem "sidekiq"
+
+#authenticate with devise
+gem "devise"
+
 #forman start project
 gem "foreman"
+gem "webpacker"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"

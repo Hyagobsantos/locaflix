@@ -1,0 +1,63 @@
+<section class="h-100">
+  <div class="container h-100">
+    <div class="row justify-content-sm-center h-100">
+      <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+        <div class="text-center my-5">
+          <img src="<%= image_path('_abcdcf98-e7c4-4a74-8d74-f97c9baa47de.jpg') %>" alt="logo" width="100">
+        </div>
+        <div class="card shadow-lg">
+          <div class="card-body p-5">
+            <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+              <div class="mb-3">
+                <%= f.label :Email, class:"mb-2 text-muted", for:"name" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email",id:"name", class:"form-control", required: "autofocus" %>
+                <div class="invalid-feedback">
+                  Name is required
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <%= f.label :password, class:"mb-2 text-muted", for:"email" %>
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password", class:"form-control",required: true %>
+                <div class="invalid-feedback">
+                  Email is invalid
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <%= f.label :password_confirmation, class:"mb-2 text-muted" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control",required: true %>
+                <div class="invalid-feedback">
+                  Password is required
+                </div>
+              </div>
+
+              <p class="form-text text-muted mb-3">
+
+              </p>
+
+              <div class="align-items-center d-flex">
+                <%= f.submit "Register", class:"btn btn-primary ms-auto" %>
+              </div>
+
+            <% end %>
+          </div>
+          <div class="card-footer py-3 border-0">
+            <div class="text-center">
+              Already have an account? <%= link_to "Login", new_session_path(resource_name) %><br />
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5 text-muted">
+          CCopyright &copy; 2022-2023 &mdash; LocaFlix
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

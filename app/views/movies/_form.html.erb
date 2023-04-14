@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :describe, style: "display: block" %>
-    <%= form.text_field :describe %>
-  </div>
-
-  <div>
-    <%= form.label :gender, style: "display: block" %>
-    <%= form.select(:gender, listGender, prompt: "Escolha um Genero") %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <form>
+    <div class="mb-3">
+      <%= form.label :titulo, style: "display: block", class:"form-label" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :observações, style: "display: block", class:"form-label" %>
+      <%= form.text_field :describe, class: "form-control" %>
+      <div id="emailHelp" class="form-text">Observações sobre o filme</div>
+    </div>
+    <div class="mb-3">
+      <%= form.label :genero, style: "display: block", class:"form-label" %>
+      <%= form.select(:gender, listGender, { prompt: "Escolha um genero" }, {class:  "form-select"}) %>
+    </div>
+    <%= form.submit title, class:"btn btn-primary" %>
+  </form>
 <% end %>

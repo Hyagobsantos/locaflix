@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav col-12">
+      <% if locals[:context_now] == "index" %>
+        <li class="nav-item col-11"></li>
+      <% end %>
+
+      <% if locals[:context_now] == "show" %>
+        <li class="nav-item"></li>
+      <% end %>
+
+      <% if locals[:context_now] == "edit" %>
+        <li class="nav-item col-9"></li>
+      <% end %>
+
+      <% if locals[:context_now] == "create" %>
+        <li class="nav-item"></li>
+      <% end %>
+
+      <li class="nav-item">
+        <% if locals[:context_now] == "index" %>
+          <a><%= link_to "Criar Filme", new_movie_path, class: "nav-link btn-new btn-custom"%></a>
+        <% end %>
+
+        <% if locals[:context_now] == "show" %>
+          <div class="center-btn">
+            <%= link_to "Editar Filme", edit_movie_path(@movie), class: "nav-link btn-edit btn-custom" %>
+            <%= button_to "Destroy this movie", @movie, method: :delete, class: "nav-link btn-destroy btn-custom" %>
+            <%= link_to "Avaliar", new_movie_comment_path(@movie), class: "nav-link  btn-custom-comments" %>
+          </div>
+        <% end %>
+
+        <% if locals[:context_now] == "edit" %>
+          <div class="center-btn">
+            <%= link_to "detalhes do filme", @movie, class: "nav-link btn-edit btn-custom" %>
+            <%= link_to "Voltar aos Filmes", movies_path,  class: "nav-link btn-edit btn-custom" %>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<% if locals[:context_now] == "index" %>
+<div class="row">
+  <h3 class="col-9 h1-di">Filmes de <span class="gradient"><%= locals[:name_user] %></span></h3>
+  <form data-turbo="false" class="d-flex col form-di" role="search">
+    <select class="form-select" name="q" id="q">
+      <option selected value="not_search">Selecione um gênero</option>
+      <% locals[:list_geners].each do |movie| %>
+        <option value=<%= movie %>><%= movie %></option>
+      <% end %>
+    </select>
+    <button class="btn btn-outline-success button-filter" type="submit">Filtrar</button>
+  </form>
+</div>
+<% end %>

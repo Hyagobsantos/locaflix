@@ -1,0 +1,26 @@
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="alert alert-danger" role="alert">
+    <%= alert %>
+  </div>
+<% end %>
+
+<%= render "nav", :locals => {context_now: "index" }  %>
+
+<h1 class="col-9 h1-di">Index</h1>
+
+<div class="row" id="movies">
+  <% @comments.each do |comment| %>
+    <div class="col-md-auto col">
+      <div class="card" style="width: 18rem;">
+        <%= render comment %>
+        <%= link_to "+Detalhes", comment,  :class => "btn btn-primary justify-content-center space-show" %>
+      </div>
+    </div>
+  <% end %>
+</div>
